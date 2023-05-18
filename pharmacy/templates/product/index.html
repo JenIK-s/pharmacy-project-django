@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+Index
+{% endblock %}
+
+{% block content %}
+{% for elem in products %}
+<a>Название - {{ elem.title }}</a>
+<a>Цена - {{ elem.price }}</a>
+<br>
+{% endfor %}
+{% endblock %}
