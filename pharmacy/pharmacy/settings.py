@@ -123,3 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+LOGIN_URL = 'users:signin'
+LOGIN_REDIRECT_URL = 'product:index'
+LOGOUT_REDIRECT_URL = 'product:index'

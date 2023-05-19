@@ -1,0 +1,70 @@
+{% load static %}
+<header>
+    <div class="city-head">
+        <h2 class="city-text">Ваш город: <a class="city-href" href="">Москва</a></h2>
+        <h2 class="city-text2">Помощь покупателям</h2>
+    </div>
+    <div class="nav-bar">
+        <!-- навигация -->
+        <a href={% url "product:index" %}><img class="nav-bar-logo" src={% static 'img/Logotype.png' %} alt=""></a>
+        <button  class="btn-kat" id="myBtn">
+            <img class="frame-katalog" src={% static "img/Frame 185.png" %} alt="">
+            <h2>Каталог</h2>
+        </button>
+<!-- Модальный -->
+<div id="myModal" class="modal">
+  <!-- Модальное содержание -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="all-modal-content">
+        <div class="cont1">
+             <li> <a class="c1" href="">Бады и витамины ></a></li>
+             <li><a href="" class="c2">Здоровое питание и напитки ></a></li>
+             <li><a class="c3" href="">Гигиена ></a></li>
+             <li><a class="c4" href="">Лекарства ></a></li>
+             <li> <a class="c5" href="">Медицинские товары > </a></li>
+        </div>
+    </div>
+  </div>
+</div> 
+<!-- строка поиска -->
+            <div class="nav-search-div">
+                <button class="search-form-nav-btn"><img src={% static "img/Round.png" %} alt=""></button>
+                <input type="search" id="lname" name="lname" placeholder="Поиск">
+            </div>
+            <div class="icon-cards">
+                <div class="icon">
+                    <img class="stat-icon" src={% static "img/off.png" %} alt="">
+                    {% if user.is_authenticated %}
+                        <a class="icon-cards-text" href={% url "product:profile" user.username %}>{{ user.get_full_name }}</a>
+                        <a class="icon-cards-text" href={% url "users:logout" %}>Выход</a>  
+                    {% else %}
+                        <a class="icon-cards-text" href={% url "users:signin"%}>Войти</a> 
+                        <a class="icon-cards-text" href={% url "users:signup"%}>Регистрация</a>   
+                    {% endif %}
+                    
+                </div>
+                <div class="icon">
+                    <img  src={% static "img/like.png" %} alt="">
+                    <a class="icon-cards-text" href="">Заказы</a>  
+                    
+                </div>
+                <div class="icon">
+                    <img class="basket-icon"  src={% static "img/backet.png" %} alt="">
+                    <a class="icon-cards-text" href="basket.html">Корзина</a>  
+                    
+                </div>
+              </div>
+
+
+    </div>
+    <div class="market-nav">
+        <ul class="hr">
+            <li><a href="katalaog.html">Лекарства</a></li>
+            <li><a href="katalaog.html">Витамины и бады</a></li>
+            <li><a href="katalaog.html">Антибиотики</a></li>
+            <li><a href="katalaog.html">Медицинская техника</a></li>
+            <li><a href="katalaog.html">Гигиена</a></li>
+        </ul>
+    </div>
+</header>

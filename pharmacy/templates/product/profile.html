@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}
+Личный кабинет
+{% endblock %}
+{% block content %}
+<a>Имя: {{ user.get_full_name }}</a>
+<br>
+<a>Логин: {{ user.username }}</a>
+<br>
+<a>Статус: {% if user.is_superuser %} Администратор {% else %} Пользователь {% endif %}</a>
+{% endblock %}
